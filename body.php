@@ -1,5 +1,5 @@
 <body class="landing">
-<?
+<?php
 
 // $SQL_pregunta = "SELECT encu_codigo,tenc_codigo,preg FROM encuesta WHERE preg_codigo='".$ultima_encuesta."'";
 // $RES_pregunta = pg_exec($link,$SQL_pregunta); 
@@ -55,7 +55,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="index.php" <?php if($encuesta){?>target="_blank" <?php } ?>>Inicio</a></li>
 								<li><a href="proyecto.php" <?php if($encuesta){?>target="_blank" <?php } ?>>Proyecto</a></li>
-								<li><a href="encuesta.php?id=<?php echo MD5($rut); ?>" <?php if($encuesta){?> class="active"<?php } ?>>Encuesta</a></li>
+								<li><a href="encuesta.php?id=<?php echo $rut; ?>" <?php if($encuesta){?> class="active"<?php } ?>>Encuesta</a></li>
 								<!-- <li><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a class="hvr-bounce-to-bottom" href="gallery1.php">Gallery1</a></li>
@@ -64,6 +64,7 @@
 								</li>	 -->
 								<li><a href="staff.php" <?php if($encuesta){?>target="_blank" <?php } ?>>Staff</a></li>
 								<li><a href="contacto.php" <?php if($encuesta){?>target="_blank" <?php } ?>>Contacto</a></li>
+								<li><a <?php if($encuesta){?>href="logout.php">Logout<?php }else{ ?>href="login.php">Login<?php } ?></a></li>
 							</ul>	
 							<div class="clearfix"> </div>
 						</div>	
