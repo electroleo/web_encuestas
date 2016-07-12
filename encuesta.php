@@ -16,7 +16,7 @@ $pregunta_tipo 		= $ROW_avance_usuario['tpre_codigo'];
 $pregunta_posicion	= $ROW_avance_usuario['preg_posicion'];//posicion actual del encuestado
 // $ultima_pregunta 	= $ROW_avance_usuario['usua_ultima_encuesta'];
 $ultima_vista 		= $ROW_avance_usuario['usua_visita_encuesta'];
-$acepta_condiciones	= ($ROW_avance_usuario['usua_acepta_condiciones'] == 'S')?true:false;
+$acepta_condiciones	= (trim($ROW_avance_usuario['usua_acepta_condiciones']) == 'S')? true:false;
 
 $SQL_primera_pregunta 	="SELECT preg_posicion 
 						FROM pregunta AS A
@@ -225,7 +225,7 @@ if($ROW_verifica_finalizado['aenc_codigo'] == 3)
 				</h1>
 			</div>
 		</form>
-	<?php }else{?>
+	<?php }else{ ?>
 
 			<p>1. Declaro que estoy de acuerdo en participar en este estudio y declaro que he sido informado/a y entiendo los objetivos, alcances y resultados del proyecto, así como sobre la modalidad de mi participación en el estudio.</p>
 			<div class="input-group">
@@ -303,7 +303,7 @@ if($ROW_verifica_finalizado['aenc_codigo'] == 3)
 			</div>
 
 			<h1><a href="#" id="acepta_encuesta" ><span class="label label-success">Ir a la Encuesta</span></a></h1>
-	<?php }?>
+	<?php } ?>
 	</div>
 </div>
 <!--//short-codes-->

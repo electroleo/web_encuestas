@@ -7,11 +7,11 @@ function conexion()
     $usuario	= "postgres";
     $clave		= "Leonardo";
     $base		= "encuesta";
-	// $db_host	= "desa.uct.cl"; // DESA.UCT.CL	
+	$db_host	= "localhost"; // DESA.UCT.CL	
 
 
 	
-	if( ($link=@pg_Connect("dbname=$base user=$usuario password=$clave")) )
+	if( ($link=@pg_Connect("dbname=$base user=$usuario password=$clave port=5432 host=$db_host")) )
     {   
   //       if ( (@mssql_select_db($base, $link)) )
 		// {   
@@ -40,3 +40,5 @@ function conexion()
 		die();
     }
 }
+
+?>

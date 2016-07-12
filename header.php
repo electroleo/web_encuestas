@@ -151,13 +151,7 @@ if($encuesta)
 
 		$("#next").click(function(e){
 			e.preventDefault();
-	        var parametros = {};
-
-	        <?php  
-	        	// if($ver_anterior) 
-						// echo "parametros['back'] = 'true'";
-	        ?>
-
+	        parametros = {};
 	        $('#miform :input').each(function(i,val){
 	        	var tipo = val.attributes.type1.value;
 	        	if( tipo == 1 || tipo == 2)
@@ -173,31 +167,32 @@ if($encuesta)
 						parametros[val.id] = 'on';
 	        	}
 	        });
-
-	        $.ajax({
-	            url: 'ingreso.php',
-	            type: 'post',
-	            dataType: 'json',
-	            data: parametros,
-	            success: function(data) {
-	                location.reload();
-	            }
-	        });
+	        if(!$.isEmptyObject(parametros))
+	        {
+	        	$.ajax({
+		            url: 'ingreso.php',
+		            type: 'post',
+		            dataType: 'json',
+		            data: parametros,
+		            success: function(data) {
+		                location.reload();
+		            }
+		        });
+			}else{
+				alert('Ingrese una respuesta.')
+			}
 		});
 
 		$("#back").click(function(e){
 			e.preventDefault();
-			<?php
-			// $.ajax({
-	  //           url: 'ingreso.php',
-	  //           type: 'post',
-	  //           dataType: 'json',
-	  //           data: {'back':'S',},
-	  //           success: function(data) {
-	  //               location.reload();
-	  //           }
-	  //       });
-			?>
+			$.ajax({
+	            url: 'retrocede.php',
+	            type: 'post',
+	            dataType: 'json',
+	            success: function(data) {
+	                location.reload();
+	            }
+	        });
 		});
 
 		$("#acepta_encuesta").click(function(e){

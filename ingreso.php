@@ -35,8 +35,7 @@ $prefijo_tipo4 		= 'encu';
 
 
 if($acepta_condiciones){
-	if($pregunta_tipo === 1)
-	{
+	if($pregunta_tipo === 1){
 		$SQL_opciones_lista = "SELECT olis_correlativo
 								FROM opciones_lista WHERE preg_codigo=$pregunta_codigo ";
 		$RES_opciones_lista = @pg_query($link,$SQL_opciones_lista);
@@ -114,38 +113,31 @@ if($acepta_condiciones){
 	$SQL_elimina_respuesta = "DELETE FROM respuestas WHERE usua_rut='$rut' AND preg_codigo=$pregunta_codigo;";
 	@pg_query($link,$SQL_elimina_respuesta);
 
-	
-	
+
 	if(@pg_query($link,$SQL_insert))
 	{
-		$nueva_posicion = $pregunta_posicion + 1;
-		$SQL_saltar_preguntas = "SELECT A.olis_salta_pregunta_orden
+		$SQL_saltar_a_pregunta = "SELECT A.olis_saltar_a_pregunta
 								FROM opciones_lista AS A
 								INNER JOIN respuestas AS B ON(A.preg_codigo=B.preg_codigo AND A.olis_correlativo=B.resp_correlativo)
-								WHERE A.olis_salta_pregunta_orden <> '' AND B.usua_rut='$rut'";
-		$RES_saltar_preguntas = @pg_query($SQL_saltar_preguntas);
-		if(pg_num_rows($RES_saltar_preguntas) > 0)
+								WHERE 	B.preg_codigo=$pregunta_codigo 
+									AND B.usua_rut='$rut'
+									AND A.olis_saltar_a_pregunta <> '0'";
+		$RES_saltar_a_pregunta = @pg_query($link,$SQL_saltar_a_pregunta);
+
+		if(pg_num_rows($RES_saltar_a_pregunta) > 0)
 		{
 			$lista_preguntas_a_saltar = '';
-			while ($ROW_saltar_preguntas = pg_fetch_array($RES_saltar_preguntas))
+			while ($ROW_saltar_preguntas = pg_fetch_array($RES_saltar_a_pregunta))
 			{
-				$lista_preguntas_a_saltar .= ','.$ROW_saltar_preguntas['olis_salta_pregunta_orden'];
+				$salta_a_pregunta = (string)$ROW_saltar_preguntas['olis_saltar_a_pregunta'];
+				$lista_preguntas_a_saltar .= ','.$salta_a_pregunta;
 			}
-			foreach (explode(",",substr($lista_preguntas_a_saltar,1)) as $key => $value) {
+			foreach (explode(",",substr($lista_preguntas_a_saltar,1)) as $key => $value) {//el substr para eliminar la primera coma ,
 				array_push($saltar_posiciones,$value);
 			}
 		}
-		// print_r($saltar_posiciones);
-		if(!empty($saltar_posiciones))
-		{
-			sort($saltar_posiciones); //ordena de menor a mayor
-			foreach ($saltar_posiciones as $key => $value) {
-				if($nueva_posicion == $value)
-					$nueva_posicion = $nueva_posicion + 1;
-			}
-		}
 
-		//VERIFICA ULTIMA PREGUNTA
+		//VERIFICA ULTIMA PREGUNTA QUE TENGA CONFIGURACION
 		$SQL_ultima_pregunta = "SELECT MAX(A.preg_posicion) AS ultimo FROM pregunta AS A 
 								WHERE A.preg_codigo IN(
 												SELECT preg_codigo FROM opciones_lista
@@ -158,6 +150,21 @@ if($acepta_condiciones){
 			$SQL_actualiza = "UPDATE usuarios SET 	aenc_codigo=3	--avance final
 								WHERE usua_rut ='$rut' ";
 		}else{
+			$nueva_posicion = '';
+			if(!empty($saltar_posiciones))
+			{
+				sort($saltar_posiciones); //ordena de menor a mayor
+				$nueva_posicion = (string)array_pop($saltar_posiciones); //extrae el ultimo valor (el mas alto)
+			}else{
+				$SQL_siguiente_normal 	= "SELECT preg_posicion FROM pregunta 
+											WHERE preg_posicion > (SELECT preg_posicion FROM pregunta WHERE preg_codigo=$pregunta_codigo) 
+											ORDER BY preg_posicion
+											limit 1 offset 0 ;";
+				$ROW_siguiente_normal 	= pg_fetch_array(@pg_query($link,$SQL_siguiente_normal));
+				$nueva_posicion 		= (string)$ROW_siguiente_normal['preg_posicion'];
+			}
+
+
 			$SQL_actualiza = "UPDATE usuarios SET 	usua_ultima_encuesta='$nueva_posicion',
 													aenc_codigo=2	--avance parcial
 								WHERE usua_rut ='$rut' ";
