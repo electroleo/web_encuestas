@@ -1,8 +1,8 @@
-<?php include_once('header.php'); include_once('body.php'); ?>
+<?php $index=true; include_once('header.php'); include_once('body.php'); ?>
 	<!-- banner -->
 	<div class="banner">
 			<div class="slider">
-				<h2 class="wow shake animated" data-wow-delay=".5s">Trip</h2>
+				<h2 class="wow fadeInUp animated" data-wow-delay=".5s">Proyecto Fondecyt Iniciación No 11150162</h2>
 				<div class="border"></div>
 				<script src="js/responsiveslides.min.js"></script>
 				<script>
@@ -28,14 +28,14 @@
 					<ul class="rslides" id="slider3">
 						<li>
 							<div class="slider-info">
-								<h3 class="wow fadeInRight animated" data-wow-delay=".5s">Lorem ipsum dolor sit amet</h3>
-								<p class="wow fadeInLeft animated" data-wow-delay=".5s">Curabitur eget metus eget erat vehicula semper vitae sed leo</p>
+								<h3 class="wow fadeInRight animated" data-wow-delay=".5s">Patentes e investigación científica</h3>
+								<p class="wow fadeInLeft animated slider-info" data-wow-delay=".5s">Un estudio empírico sobre el ejercicio del derecho de libertad de investigación en las universidades chilenas que desarrollan I+D Un estudio empírico sobre el ejercicio del derecho de libertad de investigación en las universidades chilenas que desarrollan I+D Un estudio empírico sobre el ejercicio del derecho de libertad de investigación en las universidades chilenas que desarrollan I+D</p>
 								<div class="more-button wow fadeInRight animated" data-wow-delay=".5s">
-									<a href="single.php">Click Here	</a>
+									<a href="proyecto.php">Mas información</a>
 								</div>
 							</div>
 						</li>
-						<li>
+<!-- 						<li>
 							<div class="slider-info">
 								<h3>Consectetur adipiscing elit</h3>
 								<p>Quisque nisl risus, egestas in convallis vitae, fringilla cursus magna</p>
@@ -52,14 +52,14 @@
 									<a href="single.php">Click Here	</a>
 								</div>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
 	</div>
 	<!-- //banner -->
 	<!-- banner-bottom -->
-	<div class="banner-bottom">
+<!-- 	<div class="banner-bottom">
 		<div class="container">
 			<div class="banner-bottom-grids">
 				<div class="col-md-6 banner-bottom-left wow fadeInLeft animated" data-wow-delay=".5s">
@@ -79,13 +79,56 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //banner-bottom -->
-	<!-- information -->
-	<div class="information">
+	<!-- team -->
+	<div class="team">
+		<div class="container">
+			<div class="popular-heading team-heading">
+				<h3 class="wow fadeInUp animated" data-wow-delay=".5s">Grupo de Trabajo</h3>
+				<p class="wow fadeInUp animated" data-wow-delay=".5s">Vivamus efficitur scelerisque nulla nec lobortis. Nullam ornare metus vel dolor feugiat maximus.Aenean nec nunc et metus volutpat dapibus ac vitae ipsum. Pellentesque sed rhoncus nibh</p>
+			</div>
+			<div class="team-grids">
+				<div class="col-md-4 team-grid wow fadeInUp animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/leonardo.jpg);"></div>
+					<h4>Leonardo Ulloa</h4>
+					<p>Estudiante de la carrera de Ingeniería Civil en Informática, Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="col-md-4 team-grid wow fadeInLeft animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/sulan.jpg)";></div>
+					<h4>Prof. Dra. Sulan Wong</h4>
+					<p>Abogada egresada de la Universidad de los Andes, Venezuela, Doctora por la Universidad de La Coruña, España. Estancias de investigación en el Instituto Nacional de Investigación y Automatización de Francia, INRIA y la Universidad de Barcelona, España. Profesora Asistente de la Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="col-md-4 team-grid wow fadeInUp animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/leonardo.jpg)";></div>
+					<h4>Leonardo Ulloa</h4>
+					<p>Estudiante de la carrera de Ingeniería Civil en Informática, Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="col-md-4 team-grid wow fadeInLeft animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/sulan.jpg)";></div>
+					<h4>Prof. Dra. Sulan Wong</h4>
+					<p>Abogada egresada de la Universidad de los Andes,Venezuela, Doctora por la Universidad de La Coruña, España. Estancias de investigación en el Instituto Nacional de Investigación y Automatización de Francia, INRIA y la Universidad de Barcelona, España. Profesora Asistente dela Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="col-md-4 team-grid wow fadeInUp animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/leonardo.jpg)";></div>
+					<h4>Leonardo Ulloa</h4>
+					<p>Estudiante de la carrera de Ingeniería Civil en Informática, Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="col-md-4 team-grid wow fadeInLeft animated" data-wow-delay=".5s">
+					<div class="circular_shadow" style="background-image: url(images/sulan.jpg)";></div>
+					<h4>Prof. Dra. Sulan Wong</h4>
+					<p>Abogada egresada de la Universidad de los Andes,Venezuela, Doctora por la Universidad de La Coruña, España. Estancias deinvestigación en el Instituto Nacional de Investigación y Automatización deFrancia, INRIA y la Universidad de Barcelona, España. Profesora Asistente dela Universidad Católica de Temuco, Chile</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //team -->
+		<!-- information -->
+	<div class="banner2 information">
 		<div class="container">
 			<div class="information-heading">
-				<h3 class="wow fadeInDown animated" data-wow-delay=".5s">Why Book With Us</h3>
+				<h3 class="wow fadeInDown animated" data-wow-delay=".5s">Ultimas Noticias</h3>
 				<p class="wow fadeInUp animated" data-wow-delay=".5s">Vivamus efficitur scelerisque nulla nec lobortis. Nullam ornare metus vel dolor feugiat maximus.Aenean nec nunc et metus volutpat dapibus ac vitae ipsum. Pellentesque sed rhoncus nibh</p>
 			</div>
 			
@@ -93,11 +136,11 @@
 				<div class="col-md-4 information-grid wow fadeInLeft animated" data-wow-delay=".5s">
 					<div class="information-info">
 						<div class="information-grid-img">
-							<img src="images/8.jpg" alt="" />
+							<img src="images/conferencia.jpg" alt="conferencia" />
 						</div>
 						<div class="information-grid-info">
-							<h4>Sollicitudin sit amet </h4>
-							<p>Duis dapibus lacinia libero at aliquam. Sed pulvinar, magna vitae consectetur ultricies, augue massa condimentum eros non luctus ipsum lacus interdum odio.</p>
+							<h4>Conferencia Magistral</h4>
+							<p>Investigar para Patentar: la importancia estratégica de los derechos de propiedad intelectual en el mundo de la globalización neoliberal</p>
 						</div>
 					</div>
 				</div>
@@ -128,74 +171,4 @@
 		</div>
 	</div>
 	<!-- //information -->
-	
-	<!-- popular -->
-	<div class="popular">
-		<div class="container">
-			<div class="popular-heading information-heading">
-				<h3 class="wow fadeInDown animated" data-wow-delay=".5s">Popular Places</h3>
-				<p class="wow fadeInUp animated" data-wow-delay=".5s">Vivamus efficitur scelerisque nulla nec lobortis. Nullam ornare metus vel dolor feugiat maximus.Aenean nec nunc et metus volutpat dapibus ac vitae ipsum. Pellentesque sed rhoncus nibh</p>
-			</div>
-			<div class="popular-slide">
-				<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-						// Slideshow 4
-							$("#slider1").responsiveSlides({
-								auto: true,
-								pager: true,
-								nav: false,
-								speed: 500,
-								namespace: "callbacks",
-								before: function () {
-									$('.events').append("<li>before event fired.</li>");
-								},
-								after: function () {
-									$('.events').append("<li>after event fired.</li>");
-								}
-							 });				
-						});
-				</script>
-				<div  id="top" class="callbacks_container-wrap">
-					<ul class="rslides" id="slider1">
-						<li>
-							<div class="popular-slide-info wow bounceIn animated" data-wow-delay=".5s">
-								<h4>Australia</h4>
-								<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas volutpat lacus at enim aliquet, quis iaculis nisi bibendum. Nullam cursus arcu lobortis, pharetra augue et, dignissim nunc. Morbi vestibulum tempus orci at faucibus. Sed ultricies dignissim magna tristique interdum</p>
-							</div>
-						</li>
-						<li>
-							<div class="popular-slide-info popular-slide1">
-								<h4>Philippines</h4>
-								<p>Habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas volutpat lacus at enim aliquet, quis iaculis nisi bibendum. Nullam cursus arcu lobortis, pharetra augue et, dignissim nunc. Morbi vestibulum tempus orci at faucibus. Sed ultricies dignissim magna tristique interdum Pellentesque</p>
-							</div>
-						</li>
-						<li>
-							<div class="popular-slide-info popular-slide2">
-								<h4>Maldives</h4>
-								<p>Tristique senectus pellentesque habitant morbi et netus et malesuada fames ac turpis egestas. Maecenas volutpat lacus at enim aliquet, quis iaculis nisi bibendum. Nullam cursus arcu lobortis, pharetra augue et, dignissim nunc. Morbi vestibulum tempus orci at faucibus. dignissim magna tristique interdum Sed ultricies</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="popular-grids">
-				<div class="col-md-4 popular-grid wow fadeInLeft animated" data-wow-delay=".5s">
-					<h5>Nullam convallis sagittis</h5>
-					<p>Donec malesuada ultricies metus ac vehicula. Nullam convallis sagittis tellus ut dictum. Proin risus lacus, sollicitudin sit amet ante ac, dapibus convallis ipsum.</p>
-				</div>
-				<div class="col-md-4 popular-grid wow fadeInUp animated" data-wow-delay=".5s">
-					<h5>Proin risus lacus</h5>
-					<p>Donec malesuada ultricies metus ac vehicula. Nullam convallis sagittis tellus ut dictum. Proin risus lacus, sollicitudin sit amet ante ac, dapibus convallis ipsum.</p>
-				</div>
-				<div class="col-md-4 popular-grid wow fadeInRight animated" data-wow-delay=".5s">
-					<h5>Sollicitudin sit amet ante</h5>
-					<p>Donec malesuada ultricies metus ac vehicula. Nullam convallis sagittis tellus ut dictum. Proin risus lacus, sollicitudin sit amet ante ac, dapibus convallis ipsum.</p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //popular -->
-	
 <?php include_once('footer.php'); ?>

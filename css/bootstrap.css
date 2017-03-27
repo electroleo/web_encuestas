@@ -6,7 +6,7 @@
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'PT Sans Narrow';
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -106,7 +106,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  /*font-family: monospace, monospace;*/
+  font-family: 'PT Sans Narrow';
   font-size: 1em;
 }
 button,
@@ -265,16 +266,17 @@ th {
   }
 }
 @font-face {
-  font-family: 'Glyphicons Halflings';
-
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  /*font-family: 'Glyphicons Halflings';*/
+  font-family: 'PT Sans Narrow';
+  /*src: url('../fonts/glyphicons-halflings-regular.eot');*/
+  /*src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');*/
 }
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  /*font-family: 'Glyphicons Halflings';*/
+  font-family: 'PT Sans Narrow';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1086,7 +1088,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'PT Sans Narrow';
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1526,7 +1529,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  /*font-family: Menlo, Monaco, Consolas, "Courier New", monospace;*/
+  font-family: 'PT Sans Narrow';
 }
 code {
   padding: 2px 4px;
@@ -3740,17 +3744,17 @@ tbody.collapse.in {
 .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 46px;
+  height: 38px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn {
-  height: 46px;
-  line-height: 46px;
+  height: 38px;
+  line-height: 38px;
 }
 textarea.input-group-lg > .form-control,
 textarea.input-group-lg > .input-group-addon,
@@ -4776,6 +4780,7 @@ a.label:focus {
 }
 .label-primary {
   background-color: #337ab7;
+  font-size: 20px;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
@@ -4787,6 +4792,15 @@ a.label:focus {
 .label-success[href]:hover,
 .label-success[href]:focus {
   background-color: #449d44;
+}
+.label-next {
+  background-color: #ffffff;
+  color:#429daf;
+  border: 2px solid #e1e2e1;
+}
+.label-next[href]:hover,
+.label-next[href]:focus {
+  background-color: #ffffff;
 }
 .label-info {
   background-color: #5bc0de;
@@ -5844,7 +5858,8 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'PT Sans Narrow';
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5951,7 +5966,8 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'PT Sans Narrow';
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6208,7 +6224,8 @@ button.close {
   width: 20px;
   height: 20px;
   margin-top: -10px;
-  font-family: serif;
+  /*font-family: serif;*/
+  font-family: 'PT Sans Narrow';
   line-height: 1;
 }
 .carousel-control .icon-prev:before {

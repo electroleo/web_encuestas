@@ -1,18 +1,28 @@
-<?php include_once('header.php'); include_once('body.php'); ?>
+<?php $contacto=true; include_once('header.php'); include_once('body.php'); 
+include_once("libreria/conexion.php");
+$link = conexion();
+
+$SQL_contacto = "SELECT pesta_habilitado,pesta_contenido,pesta_subtitulo,pesta_imagen1,pesta_titulo_interno 
+				FROM pestanas WHERE pesta_codigo=2"; //contacto
+$RES_contacto = @pg_query($link,$SQL_contacto);
+$ROW_contacto = pg_fetch_array($RES_contacto);
+
+//****************VALIDACIONES*******************//
+if(trim($ROW_contacto['pesta_habilitado']) != 'S')
+	echo "<script type=\"text/javascript\"> window.location=\"index.php\"; </script>"; //REDIRECCION SI NO ESTA HABILITADA LA PESTANA
+//***********************************************//
+
+?>
 	
 	<!-- contact -->
-	<div class="contact">
+	<div class="fondo-proyecto contact">
 		<div class="container">
 			<div class="contact-heading">
-					<h2 class="wow fadeInDown animated" data-wow-delay=".5s">Contact</h2>
-					<p class="wow fadeInUp animated" data-wow-delay=".5s">Vivamus efficitur scelerisque nulla nec lobortis. Nullam ornare metus vel dolor feugiat maximus.Aenean nec nunc et metus volutpat dapibus ac vitae ipsum. Pellentesque sed rhoncus nibh</p>
+					<h2 class="wow fadeInDown animated" data-wow-delay=".5s"><?php echo $ROW_contacto['pesta_titulo_interno']; ?></h2>
+					<p class="wow fadeInUp animated" data-wow-delay=".5s"><?php echo $ROW_contacto['pesta_subtitulo']; ?></p>
 				</div>
-			<div class="map wow fadeInUp animated" data-wow-delay=".5s">
-				<h4>How to find us :</h4>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3771907.975236311!2d-2.09480472072984!3d39.07355564363949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1436857347604" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</div>
 			
-			<div class="address">
+			<!-- <div class="address">
 				<div class="col-md-4 address-grids wow fadeInLeft animated" data-wow-delay=".5s">
 					<h4>Address :</h4>
 					<ul>
@@ -32,21 +42,19 @@
 					<p><a href="mailto:example@email.com">mail@example.com</a></p>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
+			</div> -->
 			<div class="contact-infom wow fadeInUp animated" data-wow-delay=".5s">
-				<h4>Miscellaneous Information:</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages, 
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.It was popularised in the 1960s with the release of Letraset
-					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<!-- <h4>Miscellaneous Information:</h4> -->
+				<p><?php echo $ROW_contacto['pesta_contenido']; ?></p>
 			</div>	
 			<div class="contact-form wow fadeInUp animated" data-wow-delay=".5s">
-				<h4>Contact Form</h4>
+				<h4>Formulario de contacto</h4>
 				<form>
-					<input type="text" placeholder="Name" required="">
-					<input type="email" placeholder="Email" required="">
-					<input type="text" placeholder="Telephone" required="">
-					<textarea placeholder="Message" required=""></textarea>
-					<button class="btn1 btn-1 btn-1b">Submit</button>
+					<input type="text" placeholder="Nombre" required="">
+					<input type="email" placeholder="Correo" required="">
+					<input type="text" placeholder="Teléfono" required="">
+					<textarea placeholder="Mensaje" required=""></textarea>
+					<button class="btn1 btn-1 btn-1b">Enviar</button>
 				</form>
 			</div>	
 		</div>

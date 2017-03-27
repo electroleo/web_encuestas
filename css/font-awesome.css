@@ -36,7 +36,8 @@
 }
 .fa {
   display: inline-block;
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
+  font-family: 'PT Sans Narrow';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
